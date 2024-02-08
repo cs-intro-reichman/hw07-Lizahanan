@@ -1,4 +1,3 @@
-
 public class SpellChecker {
 
 
@@ -18,6 +17,7 @@ public class SpellChecker {
 		}
 	}
 
+
 	public static int levenshtein(String word1, String word2) {
 		int a = word1.length();
 		int b = word2.length();
@@ -33,7 +33,8 @@ public class SpellChecker {
 		if (headA == headB) {
 			return levenshtein(tail(word1),tail(word2));
 		} else {
-			//return 0;int case1 = Math.min(levenshtein(tail(word1),word2),levenshtein(word1,tail(word2)));
+			//return 0;
+			int case1 = Math.min(levenshtein(tail(word1),word2),levenshtein(word1,tail(word2)));
 			int case2 = Math.min(case1, levenshtein(tail(word1),tail(word2))); 
 			return (1 + case2);
 		}
